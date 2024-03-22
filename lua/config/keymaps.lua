@@ -16,3 +16,9 @@ map({ "n", "v", "o" }, "^", "0", { noremap = true, silent = true, desc = "Start 
 -- mappings to add lines
 map("n", "<A-o>", "m`o<esc>``", { noremap = true, silent = true, desc = "Create line below" })
 map("n", "<A-O>", "m`O<esc>``", { noremap = true, silent = true, desc = "Create line above" })
+
+-- use lazygit.nvim instead of terminal lazygit
+vim.keymap.del("n", "<leader>gg")
+map("n", "<leader>gg", "<cmd>LazyGit<cr>", { noremap = true, silent = true, desc = "LazyGit (root dir)" })
+vim.keymap.del("n", "<leader>gG")
+map("n", "<leader>gG", "<cmd>LazyGitCurrentFile<cr>", { noremap = true, silent = true, desc = "LazyGit (cwd)" })
