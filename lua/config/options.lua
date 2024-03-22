@@ -12,3 +12,7 @@ opt.linebreak = true -- break lines at better poitions
 opt.breakindent = true -- indent wrapped lines
 opt.splitright = true -- Always vsplit to right
 opt.splitbelow = true -- always hsplit below
+
+if vim.fn.executable("nvr") then
+  vim.env.GIT_EDITOR = "nvr -cc split --remote-wait"
+end
