@@ -1,8 +1,8 @@
 return {
   "folke/flash.nvim",
   keys = {
-    { "s", false }, -- disable s keybind because of substitute
-    { "S", false }, -- same thing
+    { "s", mode = { "n", "x", "o" }, false }, -- disable s keybind because of substitute
+    { "S", mode = { "n", "x", "o" }, false }, -- same thing
     {
       "<A-s>",
       mode = { "n", "x", "o" },
@@ -13,7 +13,7 @@ return {
     },
     {
       "<A-S>",
-      mode = { "n", "o", "x" },
+      mode = { "n", "x", "o" },
       function()
         require("flash").treesitter()
       end,
